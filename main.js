@@ -49,7 +49,13 @@ function translate (RNA) {
 	RNA = RNA.split("")
 	len = Math.floor(RNA.length/3)
 	peptide = []
-	for (let i = 0; i < len; i++) {
+	var start = 0
+	for (let i = 0; i < RNA.length; i++) {
+		if (RNA[i] === "A" && RNA[i+1] === "U" && RNA[i+2] === "G") {
+			start = i
+		}
+	}
+	for (let i = start; i < len; i++) {
 		switch(RNA[i * 3]) {
 			case "A":
 				switch(RNA[i * 3 + 1]) {
