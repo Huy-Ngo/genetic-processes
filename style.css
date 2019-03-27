@@ -1,0 +1,27 @@
+.container {
+	width: 50%;
+}
+.container div {
+	padding: 0;
+}
+.textblock {
+	border: 1px solid lightgrey;
+	height: 200px;
+	width: 100%;
+	font-family: Calibri;
+	font-size: 1.5em;
+	outline: none;
+}
+textarea {
+	resize: none;
+}
+#button {
+	height: 50px;
+	width: 100%;
+	background: #ADD8F6;
+	border: none;
+	outline: none;
+}
+#button:active {
+	background: #ADC8FF;
+}
