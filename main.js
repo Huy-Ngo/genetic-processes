@@ -47,7 +47,7 @@ function transcribe (DNA) {
 
 function translate (RNA) {
 	RNA = RNA.split("")
-	len = Math.floor(RNA.length/3)
+	
 	peptide = []
 	var start = 0
 	for (let i = 0; i < RNA.length; i++) {
@@ -56,6 +56,7 @@ function translate (RNA) {
 		}
 	}
 	RNA = RNA.slice(start)
+	len = Math.floor(RNA.length/3)
 	for (let i = 0; i < len; i++) {
 		switch(RNA[i * 3]) {
 			case "A":
