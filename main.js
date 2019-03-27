@@ -55,7 +55,8 @@ function translate (RNA) {
 			start = i
 		}
 	}
-	for (let i = start; i < len; i++) {
+	RNA = RNA.slice(start)
+	for (let i = 0; i < len; i++) {
 		switch(RNA[i * 3]) {
 			case "A":
 				switch(RNA[i * 3 + 1]) {
@@ -115,6 +116,7 @@ function translate (RNA) {
 							case "A":
 							case "G":
 								peptide.push("(Stop)")
+								return peptide.join("-")
 								break
 							case "U":
 							case "C":
@@ -142,6 +144,7 @@ function translate (RNA) {
 						switch(RNA[i * 3 + 2]) {
 							case "A":
 								peptide.push("(Stop)")
+								return peptide.join("-")
 								break
 							case "G":
 								peptide.push("Trp")
@@ -220,7 +223,7 @@ function translate (RNA) {
 				}
 				break
 			default:
-				return "Please input proper RNA"
+				return ["Please input proper RNA", i, RNA]
 		}
 	}
 	return peptide.join("-")
