@@ -53,6 +53,7 @@ function translate (RNA) {
 	for (let i = 0; i < RNA.length; i++) {
 		if (RNA[i] === "A" && RNA[i+1] === "U" && RNA[i+2] === "G") {
 			start = i
+			break
 		}
 	}
 	RNA = RNA.slice(start)
